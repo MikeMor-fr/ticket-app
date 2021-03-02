@@ -8,7 +8,7 @@ const start = async () => {
   }
 
   if (!process.env.MONGO_URI) {
-    throw new Error("MONGO_URI must be defined for auth");
+    throw new Error("MONGO_URI must be defined for tickets");
   }
 
   try {
@@ -17,14 +17,14 @@ const start = async () => {
       useUnifiedTopology: true,
       useCreateIndex: true,
     });
-    console.log("Auth Connected to MongoDB");
+    console.log("Ticket Connected to MongoDB");
   } catch (err) {
     console.error(err);
   }
 };
 
 app.listen(3000, () => {
-  console.log("Auth Listening on port 3000");
+  console.log("Tickets Listening on port 3000");
 });
 
 start();
